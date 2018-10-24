@@ -3,6 +3,8 @@ package zadatak1.finansije;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.Modifier;
 
 import org.junit.After;
@@ -15,17 +17,26 @@ import zadatak1.PogonskiRadnik;
 import zadatak1.Zaposleni;
 
 public class RacunovodstvoTest {
+	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+	private final PrintStream originalOut = System.out;
+	private final PrintStream originalErr = System.err;
 
 	private Racunovodstvo instance;
 
 	@Before
 	public void setUp() throws Exception {
 		instance = new Racunovodstvo();
+		System.setOut(new PrintStream(outContent));
+	    System.setErr(new PrintStream(errContent));
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		instance = null;
+		System.setOut(originalOut);
+	    System.setErr(originalErr);
 	}
 
 	@Test
@@ -72,6 +83,23 @@ public class RacunovodstvoTest {
 		instance.isplatiPlate(new Zaposleni[]{pr1, pr2, k1}, 160);
 		
 		assertEquals("Za prosledjene niz sa tri zaposlena (PogonskiRadnik satnica 100 din., PogonskiRadnik satnica 150 din. i Komercijalista satnica 200 din.) i broj radnik sati 160, metoda isplatiPlate() u momentu kada je stanje 100000 dinara, nije umanjilo stanje na 78000.0 dinara.", 78000, instance.getStanje(), 0.001);
+	}
+	
+	@Test
+	public void metoda_isplatiPlate_nemaNovca() {
+		PogonskiRadnik pr1 = new PogonskiRadnik();
+		pr1.setSatnica(100);
+		
+		PogonskiRadnik pr2 = new PogonskiRadnik();
+		pr2.setSatnica(150);
+		
+		Komercijalista k1 = new Komercijalista();
+		k1.setSatnica(200);
+		
+		instance.setStanje(1000);
+		instance.isplatiPlate(new Zaposleni[]{pr1, pr2, k1}, 160);
+		
+		assertTrue("Za prosledjene niz sa tri zaposlena (PogonskiRadnik satnica 100 din., PogonskiRadnik satnica 150 din. i Komercijalista satnica 200 din.) i broj radnik sati 160, metoda isplatiPlate() u momentu kada je stanje 1000 dinara, nije ispisan tekst 'NEMA DOVOLJNO NOVCA'", outContent.toString().trim().equalsIgnoreCase("NEMA DOVOLJNO NOVCA"));
 	}
 
 }

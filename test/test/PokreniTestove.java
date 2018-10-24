@@ -15,6 +15,8 @@ import zadatak1.PogonskiRadnikTest;
 import zadatak1.ZaposleniTest;
 import zadatak1.finansije.ObracunPlataInterfejsTest;
 import zadatak1.finansije.RacunovodstvoTest;
+import zadatak2.AutomatNovcaInterfejsTest;
+import zadatak2.BankomatTest;
 
 /**
  * This class executes all tests and prints out the report.
@@ -28,6 +30,9 @@ public class PokreniTestove {
 		runTestsForClass(KomercijalistaTest.class);
 		runTestsForClass(ObracunPlataInterfejsTest.class);
 		runTestsForClass(RacunovodstvoTest.class);
+
+		runTestsForClass(AutomatNovcaInterfejsTest.class);
+		runTestsForClass(BankomatTest.class);
 	}
 
 	/**
