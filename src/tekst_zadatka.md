@@ -1,8 +1,9 @@
 # Laboratorijske vežbe – dvočas br. 8
 
 ## Zadatak 1
+(radi ga laborant u saradnji sa studentima)
 
-Napraviti apstraktnu klasu **Zaposleni** u paketu **zadatak1** koja ima:
+Napraviti javnu apstraktnu klasu **Zaposleni** u paketu **zadatak1** koja ima:
 1. Zaštićeni atribut **satnica** koji predstavlja vrednost jednog sata rada.
 2. Odgovarajuće javne **get i set metode** za atribut **satnica**.
 3. Javnu apstraktnu metodu **izracunajPlatu** koja kao ulaz prima broj radnih sati u mesecu i izračunava i vraća iznos plate.
