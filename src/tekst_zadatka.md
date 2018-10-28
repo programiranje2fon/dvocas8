@@ -24,7 +24,9 @@ Napraviti klasu **Racunovodstvo** u paketu **zadatak1.finansije** koja implement
 2. Odgovarajuće javne **get i set metode** za atribut **stanje**.
 3. Implementiranu javnu metodu **isplatiPlate**. Ova metoda izračunava ukupnan trošak plata za sve zaposlene iz iz niza zaposlenih koji je prosleđen kao parametar. Ukoliko ima dovoljno novca na računu, za taj iznos se umanjuje stanje na računu. Ukoliko nema dovoljno novca, ispisati poruku "NEMA DOVOLJNO NOVCA".
 
-U prethodno kreiranoj klasi **ProbaZaposleni** u paketu **zadatak1** napraviti jedan objekat klase **Racunovodstvo** koji na stanju ima 1 000 000 dinara. Nad njim pozvati metodu **isplatiPlate** kojoj je prosleđen niz sa prethodno kreirana dva zaposlena i 176 kao broj radni sati. Nakon toga, ispisati stanje na računu.
+U prethodno kreiranoj klasi **ProbaZaposleni** u paketu **zadatak1** napraviti jedan objekat klase **Racunovodstvo** korišćenjem promenljive tipa **ObracunPlataInterfejs** i nad njim pozvati metodu **isplatiPlate** kojoj je prosleđen niz sa prethodno kreirana dva zaposlena i 176 kao broj radni sati.
+ 
+Nakon toga, napraviti jednu promenljivu tipa **Racunovodstvo**  i dodeliti joj već kreirani objekat klase **Racunovodstvo**. Dodati na stanje 1 000 000 dinara, a zatim ponovo pozivati metodu za isplatu plate (sa istim parametrima), ali preko nove reference. Na kraju, ispisati stanje na računu.
 
 ## Zadatak 2
 *(studenti rade sami)*
