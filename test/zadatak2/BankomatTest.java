@@ -47,6 +47,13 @@ public class BankomatTest {
 	}
 	
 	@Test
+	public void atribut_stanje_pocetnaVrednost() {
+		double stanjeValue = (double) TestUtil.getFieldValue(instance, "stanje");
+		
+		assertEquals("Atribut stanje nema pocetnu vrednost 5000", 5000, stanjeValue, 0.001);
+	}
+	
+	@Test
 	public void atribut_stanje_vidljivost() {
 		assertTrue("Atribut stanje nije privatan", TestUtil.hasFieldModifier(Bankomat.class, "stanje", Modifier.PRIVATE));
 	}
