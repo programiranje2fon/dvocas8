@@ -13,14 +13,10 @@ public class Bankomat implements AutomatNovcaInterfejs {
 	}
 
 	public void podigniNovac(double iznos) {
-		if (iznos <= 0) {
-			System.out.println("GRESKA");
+		if (iznos > 0 && stanje >= iznos) {
+			stanje -= iznos;
 		} else {
-			if (stanje >= iznos) {
-				stanje = stanje - iznos;
-			} else {
-				System.out.println("Zao nam je, nema dovoljno novca");
-			}
+			System.out.println("GRESKA");
 		}
 	}
 

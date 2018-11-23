@@ -91,6 +91,6 @@ public class BankomatTest {
 	@Test
 	public void metoda_podigniNovac_nemaDovoljnoNovca() {
 		instance.podigniNovac(100000);
-		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"100000\", metoda nije ispisala tekst 'Zao nam je, nema dovoljno novca'", outContent.toString().trim().equalsIgnoreCase("Zao nam je, nema dovoljno novca"));
+		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"100000\", a na stanju je \"5000\" dinara, metoda nije ispisala tekst 'GRESKA'", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
 	}
 }
