@@ -70,7 +70,7 @@ public class BankomatTest {
 	@Test
 	public void metoda_uloziNovac_manjeOd0() {
 		instance.uloziNovac(-100);
-		assertTrue("Nakon poziva metode uloziNovac(double) sa prosledjenim argumentom \"-100\", metoda nije ispisala tekst 'GRESKA'", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Nakon poziva metode uloziNovac(double) sa prosledjenim argumentom \"-100\", metoda nije ispisala tekst 'GRESKA'", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 	}
 	
 	@Test
@@ -85,12 +85,12 @@ public class BankomatTest {
 	@Test
 	public void metoda_podigniNovac_manjeOd0() {
 		instance.podigniNovac(-100);
-		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"-100\", metoda nije ispisala tekst 'GRESKA'", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"-100\", metoda nije ispisala tekst 'GRESKA'", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 	}
 	
 	@Test
 	public void metoda_podigniNovac_nemaDovoljnoNovca() {
 		instance.podigniNovac(100000);
-		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"100000\", a na stanju je \"5000\" dinara, metoda nije ispisala tekst 'GRESKA'", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Nakon poziva metode podigniNovac(double) sa prosledjenim argumentom \"100000\", a na stanju je \"5000\" dinara, metoda nije ispisala tekst 'GRESKA'", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 	}
 }
