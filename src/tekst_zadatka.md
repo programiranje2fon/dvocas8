@@ -37,8 +37,8 @@ Napraviti javni interfejs **AutomatNovcaInterfejs** u paketu **zadatak2** koji i
 
 Napraviti javnu klasu **Bankomat** u paketu **zadatak2** koja implementira interfejs **AutomatNovcaInterfejs** i ima:
 1. Privatni atribut **stanje** koji predstavlja količinu novca koja se nalazi u automatu. Početno stanje je 5000.0 din.
-2. Implementiranu metodu **uloziNovac**. Ova metoda vrši ulaganje tj. dodavanje unetog iznosa na trenutno stanje samo ako je uneti iznos veći od nule. U suprotnom, ispisuje se poruka o grešci.
-3. Implementiranu metodu **podigniNovac**. Ova metoda vrši podizanje željenog iznosa tj. smanjivanje stanja samo ako je uneti iznos veći od nule i ako u automatu ima dovoljno novca. U suprotnom, ispisuje se poruka o grešci.
+2. Implementiranu metodu **uloziNovac**. Ova metoda vrši ulaganje tj. dodavanje unetog iznosa na trenutno stanje samo ako je uneti iznos veći od nule. U suprotnom, ispisuje se poruka "GRESKA".
+3. Implementiranu metodu **podigniNovac**. Ova metoda vrši podizanje željenog iznosa tj. smanjivanje stanja samo ako je uneti iznos veći od nule i ako u automatu ima dovoljno novca. U suprotnom, ispisuje se poruka "GRESKA".
 4. Javnu metodu **ispisiStanje** koja ispisuje koliko još novca ima u automatu.
 
 Napraviti klasu **ProbaBankomat** u paketu **zadatak2** koja pravi objekat klase **Bankomat**, ali korišćenjem promenljive tipa **AutomatNovcaInterfejs** i poziva njegove metode. Napraviti jednu promenljivu tipa **Bankomat** i dodeliti joj već kreirani objekat klase **Bankomat**. Ponovo pozivati metode, ali preko nove reference.
