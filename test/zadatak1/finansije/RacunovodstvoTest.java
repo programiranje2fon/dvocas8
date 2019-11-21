@@ -99,7 +99,7 @@ public class RacunovodstvoTest {
 		instance.setStanje(1000);
 		instance.isplatiPlate(new Zaposleni[]{pr1, pr2, k1}, 160);
 		
-		assertTrue("Za prosledjene niz sa tri zaposlena (PogonskiRadnik satnica 100 din., PogonskiRadnik satnica 150 din. i Komercijalista satnica 200 din.) i broj radnik sati 160, metoda isplatiPlate() u momentu kada je stanje 1000 dinara, nije ispisan tekst 'NEMA DOVOLJNO NOVCA'", outContent.toString().trim().equalsIgnoreCase("NEMA DOVOLJNO NOVCA"));
+		assertTrue("Za prosledjene niz sa tri zaposlena (PogonskiRadnik satnica 100 din., PogonskiRadnik satnica 150 din. i Komercijalista satnica 200 din.) i broj radnik sati 160, metoda isplatiPlate() u momentu kada je stanje 1000 dinara, nije ispisan tekst 'NEMA DOVOLJNO NOVCA'", outContent.toString().toLowerCase().contains("NEMA DOVOLJNO NOVCA".toLowerCase()));
 	}
 
 }
